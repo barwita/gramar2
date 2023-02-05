@@ -10,11 +10,14 @@ Builder.load_file('style.kv')
 
 
 class Gramar(Widget):
+    name=ObjectProperty(None)
+    email=ObjectProperty(None)
     def login(self):
-        pass
+        self.name.text=""
+        self.email.text="" 
     
 class Main(App):
-    def build(self):
+    def build(self):       
         return Gramar()
 
 
