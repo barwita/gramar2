@@ -1,23 +1,26 @@
+#:import utils kivy.utils
 <Gramar>
-    name:name
-    email:email
+    oracion:oracion
     GridLayout
         cols:1
         size:root.width,root.height
-        GridLayout
-            cols:2
-            Label:
-                text:"Name:"
-            TextInput:
-                id:name
-                multiline:False
-            Label:
-                text:"Email:"
-            TextInput:
-                id:email
-                multiline:False
+        spacing:10
+        Label:
+            text:"El analizador es sensible a errores ortográficos. Los nombres propios deben de empezar con letra mayúscula."
+            font_size:24
+            background_color:(1,0,0,1)
+        Label:
+            text:"Introduce la oración para analizar:"
+        TextInput:
+            id:oracion 
+            font_size:24
+            background_normal:''
+            background_color:utils.get_color_from_hex('#7aeaa9')
         Button:
-            text:"submit"
-            on_press:root.login()
+            text:"Analizar"
+            font_size:24
+            background_normal:''
+            background_color:utils.get_color_from_hex('#0a7cf3')
+            on_press:root.analizar()
                 
                 
