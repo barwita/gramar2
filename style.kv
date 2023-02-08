@@ -5,12 +5,20 @@
         cols:1
         size:root.width,root.height
         spacing:10
+        padding:10
         Label:
-            text:"El analizador es sensible a errores ortográficos. Los nombres propios deben de empezar con letra mayúscula."
-            font_size:24
+            text:"El analizador es sensible a errores ortográficos. \nLos nombres propios deben de empezar con letra mayúscula."
+            text_size: self.size
+            halign: 'left'
+            valign: 'middle'
+            font_size:16
             background_color:(1,0,0,1)
         Label:
             text:"Introduce la oración para analizar:"
+            text_size: self.size
+            halign: 'left'
+            valign: 'middle'
+            font_size:16
         TextInput:
             id:oracion 
             font_size:24
@@ -18,7 +26,7 @@
             background_color:utils.get_color_from_hex('#7aeaa9')
         Button:
             text:"Analizar"
-            font_size:24
+            font_size:20
             background_normal:''
             background_color:utils.get_color_from_hex('#0a7cf3')
             on_press:root.analizar()
