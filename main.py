@@ -4,7 +4,7 @@ from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 from kivy.uix.widget import Widget
-
+from kivy.core.window import Window
 
 Builder.load_file('style.kv')
 
@@ -15,7 +15,8 @@ class Gramar(Widget):
         self.oracion.text=""
     
 class Main(App):
-    def build(self):       
+    def build(self):  
+        Window.clearcolor=(1,1,1,1)     
         return Gramar()
 
 

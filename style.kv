@@ -4,42 +4,75 @@
     GridLayout
         cols:1
         size:root.width,root.height
-        spacing:10
-        padding:10
+        spacing:5
+        padding:5
+        Image:
+            source:'pic.png'
+            allow_stretch:True
+            keep_ratio:True
         Label:
-            text:"El analizador es sensible a errores ortográficos. \nLos nombres propios deben de empezar con letra mayúscula."
+            text:"  El analizador es sensible a errores ortográficos.\nLos nombres propios deben de empezar con letra mayúscula."
             text_size: self.size
-            halign: 'left'
+            size_hint: (1, 0.2)
+            halign: 'center'
             valign: 'middle'
-            font_size:16
-            background_color:(1,0,0,1)
+            font_size:24
+            background_color:(1, 1, 1, 1)
             canvas.before:
                 Color:
                     rgba:self.background_color
                 Rectangle:
                     size:self.size
                     pos:self.pos
-            color:(0,1,0,1)
+            color:(1, 0, 0, 1)
             bold:True
-            outline_color:(0,1,0,1)
-            outline_width:5
+            outline_color:(0, 0, 0, 1)
+            outline_width:0.1
 
         Label:
-            text:"Introduce la oración para analizar:"
+            text:"  Introduce la oración para analizar:"
             text_size: self.size
+            size_hint: (1, 0.1)
             halign: 'left'
             valign: 'middle'
-            font_size:16
+            font_size:24
+            background_color:(1, 1, 1, 1)
+            canvas.before:
+                Color:
+                    rgba:self.background_color
+                Rectangle:
+                    size:self.size
+                    pos:self.pos
+            color:(0, 0, 0, 1)
+            bold:True
+           
         TextInput:
             id:oracion 
             font_size:24
+            size_hint: (1, 0.5)
             background_normal:''
-            background_color:utils.get_color_from_hex('#7aeaa9')
-        Button:
-            text:"Analizar"
-            font_size:20
-            background_normal:''
-            background_color:utils.get_color_from_hex('#0a7cf3')
-            on_press:root.analizar()
+            background_color:utils.get_color_from_hex('#88ff4d')
+        GridLayout
+            cols:3
+            size_hint: (1, 0.1)
+            spacing:5
+            Button:
+                text:"Analizar"
+                font_size:24
+                background_normal:''
+                background_color:utils.get_color_from_hex('#0a7cf3')
+                on_press:root.analizar()
+            Button:
+                text:"Clear"
+                font_size:24
+                background_normal:''
+                background_color:utils.get_color_from_hex('#0a7cf3')
+                on_press:root.analizar()
+            Button:
+                text:"Quit"
+                font_size:24
+                background_normal:''
+                background_color:utils.get_color_from_hex('#0a7cf3')
+                on_press:root.analizar()
                 
                 
